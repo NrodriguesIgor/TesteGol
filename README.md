@@ -18,7 +18,8 @@ TODO:
 	Caso contrario abrir a solution no visual studio e rodar.
 3. Front
 	Apos realizar os dois passos anteriores, abrir um powershell a partir da pasta client\teste-gol e utilizar o comando ng serve
-
+4. Acesso
+        O usuário e senha são : admin admin
 # Contribute
 TODO: Explain how other users and developers can contribute to make your code better. 
 
