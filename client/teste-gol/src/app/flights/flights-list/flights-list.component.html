@@ -1,0 +1,35 @@
+<h1>Voos</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-success" style="width:100px" [routerLink]="['flights-new']"> Novo Vôo</button>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Vôo</th>
+                        <th scope="col">Origem</th>
+                        <th scope="col">Destino</th>
+                        <th scope="col">Data de partida</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let flight of flights">
+                        <td>{{flight.name}}</td>
+                        <td>{{flight.origin}}</td>
+                        <td>{{flight.destination}}</td>
+                        <td>{{flight.departureTime | date : 'dd/MM/yyyy hh:mm'}}</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-light"  [routerLink]="['flights-edit',flight.id]">Editar</button>
+                                
+                                <button type="button" class="btn btn-danger" (click)="deleteFlight(flight.id)" >Excluir</button>                                
+                              </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p-confirmDialog header="Confirmação" icon="pi pi-exclamation-triangle" acceptLabel="Sim" rejectLabel="Não"></p-confirmDialog>
+        </div>
+    </div>
+</div>

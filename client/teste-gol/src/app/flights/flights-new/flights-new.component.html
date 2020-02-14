@@ -1,0 +1,44 @@
+<div class="col">
+   <h2 class="text-center">Criar Vôo</h2>
+   <form [formGroup]="formGroup" (ngSubmit)="save()">
+      <div class="form-group">
+         <label>Vôo</label>
+         <input type="text" formControlName="name" placeholder="Vôo" class="form-control">
+         <div class="alert alert-danger" role="alert"
+            *ngIf="formGroup.controls.name.errors && formGroup.controls.name.touched">
+            <span *ngIf="formGroup.controls.name.errors.required" class="label-error">Campo Obrigatório</span>
+         </div>
+      </div>
+
+      <div class="form-group">
+         <label>Origem:</label>
+         <input type="text" formControlName="origin" placeholder="Origem" class="form-control">
+         <div class="alert alert-danger" role="alert"
+            *ngIf="formGroup.controls.origin.errors && formGroup.controls.origin.touched">
+            <span *ngIf="formGroup.controls.origin.errors.required" class="label-error">Campo Obrigatório</span>
+         </div>
+      </div>
+
+      <div class="form-group">
+         <label>Destino:</label>
+         <input type="text" formControlName="destination" placeholder="Vôo" class="form-control">
+         <div class="alert alert-danger" role="alert"
+            *ngIf="formGroup.controls.destination.errors && formGroup.controls.destination.touched">
+            <span *ngIf="formGroup.controls.destination.errors.required" class="label-error">Campo Obrigatório</span>
+         </div>
+      </div>
+
+      <div class="form-group">
+         <label for="calendar">Data Partida:</label>
+         <br>
+         <p-calendar formControlName="departureTime" showTime="true" hourFormat="24" dateFormat="dd/mm/yy"
+            showButtonBar="true" [showIcon]="true" inputId="calendar"></p-calendar>
+         <div class="alert alert-danger" role="alert"
+            *ngIf="formGroup.controls.departureTime.errors && formGroup.controls.departureTime.touched">
+            <span *ngIf="formGroup.controls.departureTime.errors.required" class="label-error">Campo Obrigatório</span>
+         </div>
+      </div>
+
+      <button type="submit" class="btn btn-success">Salvar</button>
+   </form>
+</div>
